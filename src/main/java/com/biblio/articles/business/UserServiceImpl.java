@@ -33,7 +33,8 @@ public class UserServiceImpl implements IUserService {
      */
     @Override
     public User getUserByEmail(String email) {
-        return iUserDao.findByEmail(email);
+        User user = iUserDao.findByEmail(email);
+        return user;
     }
 
 

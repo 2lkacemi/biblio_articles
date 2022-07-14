@@ -2,9 +2,7 @@ package com.biblio.articles.persistence;
 
 import lombok.*;
 
-import javax.persistence.Table;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
@@ -12,11 +10,15 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @Entity
-@Table(name = "USER_TBL")
+@Table(name = "user_tbl")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name = "userName")
     private String userName;
+    @Column(name = "password")
     private String password;
+    @Column(name = "email")
     private String email;
 }
